@@ -179,11 +179,7 @@ app.use('/api/v1/', auth);
 app.use(http404.notFound);
 
 //Listen on the port 3000
-app.listen(5000, () => {
-    //Add info to the loggers
-    infoLogger.info('Server is running on port: 5000');
-
-});
+app.listen(process.env.PORT || 5000);
 
 //Print out where the server is
 console.log(chalk.green("Server is running on port: 5000"));
